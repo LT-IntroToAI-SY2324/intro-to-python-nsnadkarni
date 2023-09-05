@@ -25,8 +25,10 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    raise NotImplementedError("absolute")
-
+    if(n<0):
+        return -n
+    else:
+        return n
 
 def factorial(n: int) -> int:
     """Takes a number n, and computes the factorial n! You can assume the passed in
@@ -38,7 +40,12 @@ def factorial(n: int) -> int:
     Returns:
         factorial of the passed in number
     """
-    raise NotImplementedError("factorial")
+
+    if(n==0):
+        return 1
+    else:
+        return n*factorial(n-1)
+    
 
 
 T = TypeVar("T")
@@ -55,8 +62,8 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
-    raise NotImplementedError("every_other")
 
+    return lst[::2]
 
 def sum_list(lst: List[int]) -> int:
     """Takes a list of numbers, and returns the sum of the numbers in that list. Cannot
@@ -68,7 +75,12 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
-    raise NotImplementedError("sum_list")
+
+    count = 0
+    for x in lst:
+        count += x
+
+    return count
 
 
 def mean(lst: List[int]) -> float:
@@ -80,7 +92,14 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
-    raise NotImplementedError("mean")
+    
+    count = 0
+    for x in lst:
+        count += x
+
+    count = count / len(lst)
+
+    return count
 
 
 def median(lst: List[int]) -> float:
@@ -95,7 +114,11 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    raise NotImplementedError("median")
+
+    if(len(lst)%2==0):
+        return (lst[int(len(lst)/2)]+lst[int(len(lst)/2)-1])/2
+    else:
+        return lst[int(len(lst)/2)]
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
@@ -117,7 +140,23 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
-    raise NotImplementedError("duck_duck_goose")
+    #     names = ["roscoe", "kim", "woz", "solin", "law", "remess"]
+
+    lst2 = lst.copy()
+    count = 0
+
+    while(len(lst2) > 2):
+        max = len(lst2) - 1
+        count += 2
+        if(count > max):
+            count = count - max - 1
+        lst2.pop(count)
+
+    return lst2
+
+        
+
+            
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
