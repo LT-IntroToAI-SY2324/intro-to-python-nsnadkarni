@@ -14,10 +14,12 @@ Mr. Berg will look at all your files to determine what you have completed.  If t
 
 1. What is your initial thoughts about the python programming language?
 
-
+Very easy to use and very intutive, I think a bit too easy that it gets a bit tedious.
 
 2. Describe some similarities and differences that you found between python and other programming languages you have used in the past?
 
-
+It is very similar to JavaScript, but uses block code instead of brackets. 
 
 3. What are some things that you learned through this assignment?
+
+I learned about array splicing, but I already knew almost everything else.
