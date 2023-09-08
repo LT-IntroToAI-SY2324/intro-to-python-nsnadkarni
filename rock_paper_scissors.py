@@ -105,6 +105,11 @@ def alt(a: int, b: str):
     loss_counter = 0
     for i in range(a):
         print(f"Iteration: {i}/{a}")
+        progress = (i / a)
+        bar_length = 40
+        arrow_length = int(bar_length * progress)
+        bar = "█" * arrow_length + "-" * (bar_length - arrow_length)
+        print(f"\r[{bar}] {int(progress * 100)}%")
         if(b == "-s"):
             res = main(1, 0)
         else:
