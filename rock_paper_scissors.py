@@ -1,6 +1,7 @@
 # We will write a rock paper scissors game in class - Complete it in this file
 import random
 import os
+import math
 
 def get_choices():
     options = ["Rock", "Paper", "Scissors"]
@@ -103,6 +104,7 @@ def alt(a: int, b: str):
     win_counter = 0
     loss_counter = 0
     for i in range(a):
+        print(f"Iteration: {i}")
         if(b == "-s"):
             res = main(1, 0)
         else:
@@ -115,6 +117,8 @@ def alt(a: int, b: str):
             loss_counter += 1
 
     print(f"Ties: {tie_counter} Wins: {win_counter} Losses: {loss_counter}")
+    target = int(a / 3)
+    print(f"{abs(math.floor((tie_counter / target) * 100) -100 )}% off (ideal) for a tie {abs(math.floor((win_counter / target) * 100) - 100)}% off (ideal) for a win {abs(math.floor((loss_counter / target) * 100) - 100)}% off (ideal) for a loss")
 
 os.system("cls")
 
