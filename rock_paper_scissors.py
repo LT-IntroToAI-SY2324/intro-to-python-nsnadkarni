@@ -104,7 +104,7 @@ def alt(a: int, b: str):
     win_counter = 0
     loss_counter = 0
     for i in range(a):
-        print(f"Iteration: {i}")
+        print(f"Iteration: {i}/{a}")
         if(b == "-s"):
             res = main(1, 0)
         else:
