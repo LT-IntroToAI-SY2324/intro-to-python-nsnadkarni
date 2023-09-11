@@ -100,6 +100,15 @@ def main(a: int, b: int):
         #os.system("cls")
         main(0, 1)
 
+def create_bar_graph(data):
+    max_value = max(data)
+    scale_factor = 40 / max_value  # Adjust this to control the width of the bars
+    for value in data:
+        bar_width = int(value * scale_factor)
+        bar = '*' * bar_width
+        print(f'{value}: {bar}')
+
+
 def alt(a: int, b: str):
     tie_counter = 0
     win_counter = 0
@@ -125,6 +134,8 @@ def alt(a: int, b: str):
     print(f"Ties: {tie_counter} Wins: {win_counter} Losses: {loss_counter}")
     target = int(a / 3)
     print(f"{abs(math.floor((tie_counter / target) * 100) -100 )}% off (ideal) for a tie {abs(math.floor((win_counter / target) * 100) - 100)}% off (ideal) for a win {abs(math.floor((loss_counter / target) * 100) - 100)}% off (ideal) for a loss")
+    data = [win_counter, tie_counter, loss_counter]
+    create_bar_graph(data)
 
 os.system("cls")
 
