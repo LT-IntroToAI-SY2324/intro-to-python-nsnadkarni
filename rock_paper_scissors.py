@@ -2,6 +2,7 @@
 import random
 import os
 import math
+import sys
 
 def get_choices():
     options = ["Rock", "Paper", "Scissors"]
@@ -36,7 +37,7 @@ def main(a: int, b: int):
         choices = get_choices()
     else:
         choices = get_choices2()
-    os.system('cls')
+    #os.system('cls')
     if(b != 0):
         print(f"{choices['player']} vs {choices['computer']}")
 
@@ -96,7 +97,7 @@ def main(a: int, b: int):
             pass
 
     if(a == "y"):
-        os.system("cls")
+        #os.system("cls")
         main(0, 1)
 
 def alt(a: int, b: str):
@@ -106,7 +107,7 @@ def alt(a: int, b: str):
     for i in range(a):
         print(f"Iteration: {i}/{a}")
         progress = (i / a)
-        bar_length = 40
+        bar_length = 90
         arrow_length = int(bar_length * progress)
         bar = "█" * arrow_length + "-" * (bar_length - arrow_length)
         print(f"\r[{bar}] {int(progress * 100)}%")
