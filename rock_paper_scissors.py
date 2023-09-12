@@ -2,7 +2,7 @@
 import random
 import os
 import math
-import sys
+import time
 
 def get_choices():
     options = ["Rock", "Paper", "Scissors"]
@@ -110,6 +110,7 @@ def create_bar_graph(data):
 
 
 def alt(a: int, b: str):
+    start_time = time.time()
     tie_counter = 0
     win_counter = 0
     loss_counter = 0
@@ -131,6 +132,9 @@ def alt(a: int, b: str):
         elif(res == -1):
             loss_counter += 1
 
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Elapsed time: {elapsed_time:.2f} seconds")
     print(f"Ties: {tie_counter} Wins: {win_counter} Losses: {loss_counter}")
     target = int(a / 3)
     print(f"{abs(math.floor((tie_counter / target) * 100) -100 )}% off (ideal) for a tie {abs(math.floor((win_counter / target) * 100) - 100)}% off (ideal) for a win {abs(math.floor((loss_counter / target) * 100) - 100)}% off (ideal) for a loss")
